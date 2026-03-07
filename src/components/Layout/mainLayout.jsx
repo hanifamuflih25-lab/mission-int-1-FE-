@@ -9,19 +9,27 @@ function MainLayout({ children }) {
 
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Header */}
+
       <header className="bg-white shadow-[20px_10px_40px_rgba(62,67,74,0.31)] relative w-full h-[74px] md:pl-20 md:shadow-none px-6 py-4 flex justify-between items-center">
-        {/* Logo di kiri */}
+ 
         <Logo />
         <div className="hidden md:flex items-center space-x-6">
-          {/* Kategori */}
+
           <details className="relative">
             <summary className="cursor-pointer text-gray-700 font-medium hover:text-orange-500 list-none">
               Kategori
             </summary>
           </details>
 
-          {/* Foto profil */}
+
+          <Link
+            to="/admin"
+            className="text-gray-700 font-medium hover:text-orange-500"
+          >
+            Admin
+          </Link>
+
+
           <details className="relative pr-20">
             <summary className="list-none cursor-pointer">
               <img
@@ -31,9 +39,22 @@ function MainLayout({ children }) {
               />
             </summary>
             <ul className="absolute right-0 mt-2 w-40 bg-white border rounded-lg shadow-lg z-1">
-             
-              <li><Link to="/login" className="block px-4 py-2 hover:bg-orange-100">Login</Link></li>
-              <li><Link to="/register" className="block px-4 py-2 hover:bg-orange-100">Register</Link></li>
+              <li>
+                <Link
+                  to="/login"
+                  className="block px-4 py-2 hover:bg-orange-100"
+                >
+                  Login
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/register"
+                  className="block px-4 py-2 hover:bg-orange-100"
+                >
+                  Register
+                </Link>
+              </li>
             </ul>
           </details>
         </div>
@@ -52,18 +73,38 @@ function MainLayout({ children }) {
         <div className="md:hidden bg-white shadow px-6 py-4 space-y-4">
           <div>
             <ul className="pl-4">
-              <li><Link to="/login" className="block py-1 hover:text-orange-500">Login</Link></li>
-              <li><Link to="/register" className="block py-1 hover:text-orange-500">Register</Link></li>
+              <li>
+                <Link
+                  to="/login"
+                  className="block py-1 hover:text-orange-500"
+                >
+                  Login
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/register"
+                  className="block py-1 hover:text-orange-500"
+                >
+                  Register
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/admin"
+                  className="block py-1 hover:text-orange-500"
+                >
+                  Admin
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
       )}
 
-      {/* Main Content */}
       <main className="flex-grow bg-[#fdf8f2]">{children}</main>
 
-       {/* Footer */}
-       <Footer />
+      <Footer />
     </div>
   );
 }

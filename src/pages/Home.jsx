@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import MainLayout from "../components/Layout/mainLayout";
 import bege from "../assets/images/content-four.jpg";
 import ratingImg from "../assets/images/Rating.png";
@@ -15,7 +16,8 @@ import content9 from "../assets/images/content-nine.jpg";
 
 import profile1 from "../assets/images/cowok-abu.png";
 import profile2 from "../assets/images/orang-pink.png";
-import profile3 from "../assets/images/orang-biru.png";
+import profile3 from "../assets/images/orang-biru.png"; 
+
 
 const contents = [
   { id: 1, img: content1, profile: profile1 },
@@ -30,10 +32,21 @@ const contents = [
 ];
 
 function Home() {
+
+  const [courses, setCourses] = useState([]);
+
+  useEffect(() => {
+    const savedCourses = localStorage.getItem("courses");
+
+    if (savedCourses) {
+      setCourses(JSON.parse(savedCourses));
+    }
+  }, []);
+
   return (
     <MainLayout>
 
-      {/* HERO SECTION */}
+
       <div className="w-full max-w-[1300px] mx-auto my-7 px-4">
         <div className="relative rounded-xl overflow-hidden shadow-lg text-white xl:h-[400px]">
           
@@ -64,7 +77,7 @@ function Home() {
       </div>
 
 
-      {/* HEADER NAVBAR */}
+
       <div className="mt-5 px-4 md:px-6 xl:px-20 mx-auto">
         <div className="text-left">
           <h1 className="text-xl sm:text-2xl font-semibold text-black mb-2 leading-tight">
@@ -104,15 +117,16 @@ function Home() {
       </div>
 
 
-      {/* CARD SECTION */}
+
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 py-10 px-4 md:px-6 xl:px-20">
+
+
         {contents.map((item) => (
           <div
             key={item.id}
             className="flex flex-col bg-white border border-gray-200 rounded-xl p-4 w-full max-w-[450px] mx-auto shadow-md transition hover:shadow-lg"
           >
 
-            {/* MOBILE LAYOUT */}
             <div className="flex sm:hidden gap-4">
               <img
                 src={item.img}
@@ -139,7 +153,6 @@ function Home() {
               </div>
             </div>
 
-            {/* DESKTOP LAYOUT */}
             <div className="hidden sm:flex flex-col gap-3">
               <img
                 src={item.img}
@@ -184,10 +197,59 @@ function Home() {
 
           </div>
         ))}
+
+
+        {courses.map((item) => (
+          <div
+            key={item.id}
+            className="flex flex-col bg-white border border-gray-200 rounded-xl p-4 w-full max-w-[450px] mx-auto shadow-md transition hover:shadow-lg"
+          >
+
+            <img
+              src={item.image}
+              alt="content"
+              className="w-full h-[180px] rounded-lg object-cover"
+            />
+
+            <p className="text-lg font-bold font-poppins text-gray-900 mt-3">
+              {item.title}
+            </p>
+
+            <p className="text-sm font-poppins text-[#333333]">
+              {item.description}
+            </p>
+
+            <div className="flex items-center gap-3 mt-3">
+              <img
+                src={item.profileImg}
+                alt="profile"
+                className="w-9 h-9 rounded-full object-cover"
+              />
+              <div className="flex flex-col">
+                <span className="text-base font-medium">{item.teacher}</span>
+                <p className="text-sm text-gray-500">{item.job}</p>
+              </div>
+            </div>
+
+            <div className="flex justify-between items-center mt-3">
+              <div className="flex items-center gap-2">
+                <img src={ratingImg} alt="rating" className="w-[80px] md:w-[90px]" />
+                <p className="text-xs md:text-sm text-gray-500 underline">
+                  3.5 (86)
+                </p>
+              </div>
+              <div className="text-base md:text-lg font-bold text-green-500">
+                {item.price}
+              </div>
+            </div>
+
+          </div>
+        ))}
+
       </div>
 
 
-      {/* NEWSLETTER */}
+  
       <div className="w-full max-w-7xl mx-auto my-14 px-4">
         <div className="relative rounded-xl overflow-hidden shadow-lg text-white">
 

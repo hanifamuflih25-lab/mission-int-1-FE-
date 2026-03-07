@@ -7,7 +7,7 @@ import LogoImages from "../../assets/images/google-icon.png";
 function LoginForm() {
   return (
     <form className="space-y-4">
-      {/* Email */}
+
       <div className="flex flex-col space-y-1">
         <label className="text-sm font-poppins font-medium text-[#333333ad] border-[#3a35411f]">
           E-Mail<span className="text-red-500">*</span>
@@ -15,13 +15,13 @@ function LoginForm() {
         <InputField type="email" placeholder="" />
       </div>
 
-      {/* Password */}
+
       <div className="flex flex-col space-y-1 relative">
         <label className="text-sm font-medium text-[#333333ad]">
           Kata Sandi <span className="text-red-500">*</span>
         </label>
 
-        {/* Input Password */}
+
         <div className="relative">
           <InputField
             type="password"
@@ -36,7 +36,7 @@ function LoginForm() {
         </div>
       </div>
 
-      {/* Lupa Password */}
+
       <div className="flex justify-end">
         <Link
           to="#"

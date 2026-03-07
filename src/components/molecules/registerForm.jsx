@@ -8,14 +8,14 @@ import LogoImagess from "../../assets/images/Indonesia.png";
 function RegisterForm() {
   return (
     <form className="space-y-4">
-      {/* Name */}
+
       <div className="flex flex-col space-y-1">
         <label className="text-sm font-poppins font-medium text-[#333333ad] border-[#3a35411f]">
           Nama Lengkap<span className="text-red-500">*</span>
         </label>
         <InputField type="text" placeholder="" />
       </div>
-      {/* Email */}
+ 
       <div className="flex flex-col space-y-1">
         <label className="text-sm font-poppins font-medium text-[#333333ad] border-[#3a35411f]">
           E-Mail<span className="text-red-500">*</span>
@@ -29,7 +29,7 @@ function RegisterForm() {
         </label>
 
         <div className="flex items-center">
-          {/* Kode Negara */}
+    
           <div className="w-12 h-12 bg-[#f0f0f0] flex items-center justify-center border border-[#3a35411f] rounded-l-md">
             <img
               src={LogoImagess}
@@ -38,7 +38,7 @@ function RegisterForm() {
             />
           </div>
 
-          {/* Select Kode Negara */}
+    
           <select
             name="kode"
             className="h-12 px-2 text-sm bg-white border rounded-r-lg border-[#3a35411f] focus:ring-2 focus:ring-green-500 outline-none"
@@ -50,7 +50,7 @@ function RegisterForm() {
             <option value="+72">+72</option>
           </select>
 
-          {/* Input Nomor */}
+
           <input
             type="tel"
             id="phone"
@@ -62,13 +62,12 @@ function RegisterForm() {
         </div>
       </div>
 
-      {/* Password */}
       <div className="flex flex-col space-y-1 relative">
         <label className="text-sm font-medium text-[#333333ad]">
           Kata Sandi <span className="text-red-500">*</span>
         </label>
 
-        {/* wrapper relative untuk input + icon */}
+
         <div className="relative">
           <InputField
             type="password"
@@ -82,13 +81,11 @@ function RegisterForm() {
           />
         </div>
       </div>
-      {/* Password */}
+
       <div className="flex flex-col space-y-1 relative">
         <label className="text-sm font-medium text-[#333333ad]">
           Konfirmasi Kata Sandi <span className="text-red-500">*</span>
         </label>
-
-        {/* wrapper relative untuk input + icon */}
         <div className="relative">
           <InputField
             type="password"
@@ -103,7 +100,7 @@ function RegisterForm() {
         </div>
       </div>
 
-      {/* Lupa Password */}
+
       <div className="flex justify-end">
         <Link
           to="#"

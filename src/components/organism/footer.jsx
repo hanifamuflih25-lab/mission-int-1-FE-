@@ -16,9 +16,9 @@ function Footer() {
   return (
     <footer className="bg-white border-t text-gray-700 px-6 pt-8">
       <div className="max-w-7xl mx-auto">
-        {/* Desktop */}
+    
         <div className="hidden md:grid grid-cols-4 gap-10 lg:gap-40">
-          {/* Logo */}
+     
           <div>
             <Logo />
             <p className="mt-2 text-md font-poppins font-semibold">
@@ -30,7 +30,7 @@ function Footer() {
             </p>
           </div>
 
-          {/* Kategori */}
+    
           <div>
             <p className="font-semibold mb-2 font-poppins font-semibold">
               Kategori
@@ -44,7 +44,7 @@ function Footer() {
             </ul>
           </div>
 
-          {/* Perusahaan */}
+ 
           <div>
             <p className="font-semibold mb-2 font-poppins font-semibold">
               Perusahaan
@@ -58,7 +58,7 @@ function Footer() {
             </ul>
           </div>
 
-          {/* Komunitas */}
+   
           <div>
             <p className="font-semibold mb-2 font-poppins font-semibold">
               Komunitas
@@ -73,16 +73,16 @@ function Footer() {
 
         {/* Garis panjang + Sosmed bawah */}
       <div className="w-full max-w-7xl mx-auto px-1 pb-2.5">
-        {/* Garis */}
+      
         <hr className="border-t border-gray-300 w-full mb-4 mt-4" />
-        {/* Sosmed */}
+   
         <div className="flex justify-between items-center">
-          {/* Copyright */}
+  
           <p className="text-sm text-gray-500">
             ©2023 Gerobak Sayur All Rights Reserved.
           </p>
 
-          {/* Sosial Media */}
+    
           <div className="flex space-x-3">
             <img src={linkedin} alt="LinkedIn" className="w-6 h-6" />
             <img src={Facebook} alt="Facebook" className="w-6 h-6" />
@@ -92,7 +92,7 @@ function Footer() {
         </div>
       </div>
 
-      {/* === Mobile Footer === */}
+
       <div className="md:hidden mt-8">
         <div>
           <Logo />
@@ -105,9 +105,9 @@ function Footer() {
           </p>
         </div>
 
-        {/* Accordion Menu */}
+
         <div className="mt-6 space-y-2">
-          {/* Perusahaan */}
+
           <div>
             <button
               className="w-full flex justify-between items-center py-2 font-poppins font-semibold"
@@ -133,7 +133,7 @@ function Footer() {
             )}
           </div>
 
-          {/* Kategori */}
+
           <div>
             <button
               className="w-full flex justify-between items-center py-2 font-poppins font-semibold"
@@ -159,7 +159,7 @@ function Footer() {
             )}
           </div>
 
-          {/* Komunitas */}
+
           <div>
             <button
               className="w-full flex justify-between items-center py-2 font-poppins font-semibold"
@@ -183,17 +183,17 @@ function Footer() {
           </div>
         </div>
 
-        {/* Garis panjang + Sosmed bawah */}
+
         <hr className="border-t border-gray-300 mt-6" />
         <div className="flex flex-col py-4 space-y-3">
-          {/* Sosial Media */}
+
           <div className="flex space-x-3">
             <img src={linkedin} alt="LinkedIn" className="w-6 h-6" />
             <img src={Facebook} alt="Facebook" className="w-6 h-6" />
             <img src={twitter} alt="Twitter" className="w-6 h-6" />
             <img src={instagram} alt="Instagram" className="w-6 h-6" />
           </div>
-          {/* Copyright */}
+
           <p className="text-sm text-gray-500">
             ©2023 Gerobak Sayur All Rights Reserved.
           </p>
